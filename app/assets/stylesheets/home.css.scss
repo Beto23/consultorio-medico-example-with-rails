@@ -1,0 +1,89 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//Header
+.header-home{
+  background: #F6F6F6;
+  .img-logo{
+    height: 4em;
+  }
+  .header-home-nav{
+    background: #007DAD;
+    ul{
+      .nav-items{
+        padding: 1em 1.3em;
+        cursor: pointer;
+        color: white;
+        transition: .5s background ease;
+      }
+      .nav-items:hover{
+        background: black;
+      }
+    }
+  }
+}
+
+//welcome
+
+.welcome-container{
+  background: white;
+  .welcome-container-info{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #007DAD;
+    h3{
+      text-align: center;
+      padding: 3em;
+      border-bottom: 2px solid white;
+      width: 90%;
+      font-size: 1.5em !important;
+    }
+    .articles-items{
+      margin: 3em 0;
+      .articles-items-servicio{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img{
+          border-radius: 100%;
+          border: 2px solid white;
+          padding: .5em;
+        }
+        h4, p, img{
+          margin-bottom: 1em;;
+        }
+        p{
+          text-align: justify;
+        }
+      }
+    }
+  }
+  .welcome-container-servicios{
+    padding: 2em 0;
+    img{
+      height: 15em;
+    }
+  }
+}
+
+.img-parallax{
+ figure{
+   background-image: asset-data-url("banner-2.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   height: 38.5em;
+ }
+}
+
+footer{
+  background: #F6F6F6;
+  height: 7em;
+  .fa-gitgub{
+    font-size: 1.5em !important;
+  }
+}
