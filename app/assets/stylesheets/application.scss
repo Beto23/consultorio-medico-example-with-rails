@@ -32,5 +32,22 @@
    margin: 0;
  }
 
+ i, li{
+   cursor: pointer;
+ }
+.fa-money{
+  color: #2E862E;
+}
+.fa-pencil{
+  color: #337AB7;
+}
+.fa-ban{
+  color: #DE5151;
+  margin-right: 1em;
+}
+.fa-file-text{
+  color: #509C50;
+}
+
 @import "home.css.scss";
 @import "session.scss";
