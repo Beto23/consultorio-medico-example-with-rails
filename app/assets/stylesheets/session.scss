@@ -1,0 +1,49 @@
+.header-signin{
+  background: #2b2c31 !important;
+  padding: 1em;
+  h2{
+    color: white;
+    font-size: 2em;
+    margin-left: 1em;
+  }
+  button{
+    padding: .2em .4em;
+    .fa-bars{
+      color: black;
+    }
+  }
+}
+
+//menu
+
+.container-opciones{
+  background: white;
+  margin: 0 auto;
+  border: 1px solid #d8dee2;
+  border-top: 1px solid #d8dee2;
+  height: 40.4em;
+  .container-opciones-menu{
+    background: #2B2C31;
+    padding: 0;
+    ul{
+      li{
+        a{
+          color: white;
+          cursor: pointer;
+        }
+        a:hover, a:focus{
+          color: black;
+          background: #0157A0;
+        }
+        a:active{
+          background: #0157A0;
+        }
+      }
+    }
+  }
+  .container-opciones-container{
+    padding-top: 1em;
+    max-height: 37em;
+    overflow: auto;;
+  }
+}
