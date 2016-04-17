@@ -9,8 +9,26 @@ class SpecialtiesController < ApplicationController
   #GET /specialties
   def index
     #obtiene todas los registros SELECT * FROM specialties
-
     @specialties = Specialty.all
+  end
+
+  def new
+    @specialty = Specialty.new
+  end
+
+  def create
+    @specialty = Specialty.new(specialty_params)
+    if @specialty.save
+      redirect_to specialties_path
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def specialty_params
+    params.require(:specialty).permit(:name)
   end
 
 end
