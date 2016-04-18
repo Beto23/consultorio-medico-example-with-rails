@@ -28,12 +28,17 @@ class SpecialtiesController < ApplicationController
   end
 
   def update
-  if @specialty.update(specialty_params)
-    redirect_to specialties_path
-  else
-    render :edit
+    if @specialty.update(specialty_params)
+      redirect_to specialties_path
+    else
+      render :edit
+    end
   end
-end
+
+  def destroy
+    @specialty.destroy
+    redirect_to specialties_path
+  end
 
   private
 

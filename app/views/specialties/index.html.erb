@@ -17,7 +17,9 @@
               <td><%= specialty.id  %></td>
               <td><%=specialty.name%></td>
               <td>
-                <i class="fa fa-ban"></i>
+                <%= link_to(specialty, method: :delete) do %>
+                  <i class="fa fa-ban"></i>
+                <%end %>
                 <%= link_to (edit_specialty_path(specialty.id)) do %>
                   <i class="fa fa-pencil"></i>
                 <%end %>
