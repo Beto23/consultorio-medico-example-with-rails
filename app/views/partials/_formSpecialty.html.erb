@@ -15,6 +15,9 @@
         * <%= message  %>
       </div>
     <%end %>
+    <%= link_to (specialties_path) do %>
+      <button type="button" class="btn btn-default">Regresar</button>
+    <%end %>
     <%= f.submit nameBtn, class:"btn btn-primary"  %>
 
   <% end %>
