@@ -12,12 +12,17 @@
     </div>
     <% @specialty.errors.full_messages.each do |message|  %>
       <div class="be_red white to-space">
-        * <%= message  %>
+
+        <div class="alert alert-danger">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+           <b><%= message  %></b>
+        </div>
       </div>
     <%end %>
     <%= link_to (specialties_path) do %>
       <button type="button" class="btn btn-default">Regresar</button>
     <%end %>
+
     <%= f.submit nameBtn, class:"btn btn-primary"  %>
 
   <% end %>
