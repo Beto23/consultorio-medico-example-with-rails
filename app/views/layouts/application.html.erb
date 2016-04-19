@@ -9,25 +9,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render "partials/headerLogged" %>
-  
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
 
-  <div class="container-opciones row">
-    <div class="container-opciones-menu col-xs-2">
-      <ul class="nav nav-pills nav-stacked">
-        <li><a >Inicio</a></li>
-        <li><a >Consultas</a></li>
-        <li><a >Pacientes</a></li>
-        <li><a >Doctores</a></li>
-        <li><%= link_to  "Especialidades", specialties_path  %></li>
-      </ul>
-    </div>
-    <div class="container-opciones-container col-xs-10">
-      <%= yield %>
-    </div>
-  </div>
+  <!-- <p class="notice"><%= notice %></p> -->
+  <!-- <p class="alert"><%= alert %></p> -->
+  <!-- <%= link_to  "Especialidades", specialties_path  %> -->
+  <%= render "partials/header"  %>
+  <%= yield %>
 
 </body>
 </html>
