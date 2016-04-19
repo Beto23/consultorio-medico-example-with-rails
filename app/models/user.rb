@@ -3,5 +3,5 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  validates :permission_level, :presence => { :message => "es requerido!"  }
+  #validates :permission_level, :presence => { :message => "es requerido!"  }
 end
