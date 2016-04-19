@@ -49,5 +49,9 @@
   color: #509C50;
 }
 
+a{
+  text-decoration: none !important;
+}
+
 @import "home.css.scss";
 @import "session.scss";

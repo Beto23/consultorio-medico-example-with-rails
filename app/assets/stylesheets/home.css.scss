@@ -11,14 +11,18 @@
   .header-home-nav{
     background: #007DAD;
     ul{
-      .nav-items{
-        padding: 1em 1.3em;
-        cursor: pointer;
-        color: white;
-        transition: .5s background ease;
-      }
-      .nav-items:hover{
-        background: black;
+      li{
+        padding: 0;
+        .nav-items{
+          padding: 1em 1.3em;
+          cursor: pointer;
+          color: white;
+          transition: .5s background ease;
+          width: 100%;
+        }
+        .nav-items:hover{
+          background: black;
+        }
       }
     }
   }
