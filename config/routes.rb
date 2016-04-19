@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   resources :specialties#, only: [:create, :destroy, :update, :index]
 
   # The priority is based upon order of creation: first created -> highest priority.
