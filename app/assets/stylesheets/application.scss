@@ -53,6 +53,13 @@ a{
   text-decoration: none !important;
 }
 
+.flash-msg{
+  position: fixed;
+  left: 3px;
+  right: 3px;
+  top: 134px;
+}
+
 @import "home.css.scss";
 @import "session.scss";
 @import "logIn.scss";

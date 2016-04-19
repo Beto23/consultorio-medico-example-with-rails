@@ -1,0 +1,15 @@
+<!-- <p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p> -->
+<% flash.each do |name, msg| %>
+  <%if name == "alert" %>
+    <%= content_tag :div, class: "alert alert-danger fade in flash-msg " do %>
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong><%= msg %></strong>
+    <%end%>
+  <%else %>
+  <%= content_tag :div, class: "alert alert-success fade in flash-msg" do %>
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong><%= msg %></strong>
+  <%end%>
+  <%end %>
+<% end %>
