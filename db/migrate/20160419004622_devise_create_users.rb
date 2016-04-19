@@ -31,7 +31,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       # t.datetime :locked_at
 
       t.string :name
-      t.string :permission_level
+      t.integer :permission_level
 
       t.timestamps null: false
     end
