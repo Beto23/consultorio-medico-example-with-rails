@@ -1,0 +1,14 @@
+.err404{
+  background-image: asset-data-url("geometry.png");
+  .container{
+    margin-top: 0;
+    .msj404{
+      h2:nth-child(1){
+        font-size: 6em;
+      }
+      h2:nth-child(2){
+        font-size: 4em;
+      }
+    }
+  }
+}
