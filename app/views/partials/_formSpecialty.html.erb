@@ -1,29 +1,30 @@
-<section>
-  <% name ||= "Agregar Especialidad"  %>
-  <% nameBtn ||= "Agregar"  %>
-  <ul class="nav nav-tabs">
-    <li role="presentation" class="active tabs" ><a href=""><%= name  %></a></li>
-  </ul>
-  <%= form_for(@specialty)  do |f| %>
+<section class="form-specialty row middle-xs center-xs" >
+  <div>
+    <% name ||= "Agregar Especialidad"  %>
+    <% nameBtn ||= "Agregar"  %>
+    <h2><%= name %></h2>
+    <hr>
+    <%= form_for(@specialty)  do |f| %>
 
-    <div class="form-group">
-      <label>Nombre</label>
-      <%= f.text_field :name, class: "form-control" %>
-    </div>
-    <% @specialty.errors.full_messages.each do |message|  %>
-      <div class="be_red white to-space">
-
-        <div class="alert alert-danger">
-          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-           <b><%= message  %></b>
-        </div>
+      <div class="form-group">
+        <label>Nombre</label>
+        <%= f.text_field :name, class: "form-control" %>
       </div>
-    <%end %>
-    <%= link_to (specialties_path) do %>
-      <button type="button" class="btn btn-default">Regresar</button>
-    <%end %>
+      <% @specialty.errors.full_messages.each do |message|  %>
+        <div class="be_red white to-space">
 
-    <%= f.submit nameBtn, class:"btn btn-primary"  %>
+          <div class="alert alert-danger">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+             <b><%= message  %></b>
+          </div>
+        </div>
+      <%end %>
+      <%= link_to (specialties_path) do %>
+        <button type="button" class="btn btn-default">Regresar</button>
+      <%end %>
 
-  <% end %>
+      <%= f.submit nameBtn, class:"btn btn-primary"  %>
+
+    <% end %>
+  </div>
 </section>
