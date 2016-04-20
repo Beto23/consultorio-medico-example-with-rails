@@ -1,34 +1,37 @@
-<section class="container-listado">
-    <div class="container-all-listado">
-      <h2>Especialidades</h2>
-      <hr>
-      <table class="table table-striped container-all-listado-table">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Especialidad</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @specialties.each do |specialty|  %>
+<div class="container">
+  <section class="container-listado">
+      <div class="container-all-listado">
+        <h2>Especialidades</h2>
+        <hr>
+        <table class="table table-striped container-all-listado-table">
+          <thead>
             <tr>
-              <td><%= specialty.id  %></td>
-              <td><%=specialty.name%></td>
-              <td>
-                <%= link_to(specialty, method: :delete) do %>
-                  <i class="fa fa-ban"></i>
-                <%end %>
-                <%= link_to (edit_specialty_path(specialty.id)) do %>
-                  <i class="fa fa-pencil"></i>
-                <%end %>
-              </td>
+              <th>#</th>
+              <th>Especialidad</th>
+              <th></th>
             </tr>
-          <%end %>
-        </tbody>
-      </table>
-    </div>
-    <%= link_to (new_specialty_path) do  %>
-      <button type="button" class="btn btn-primary" name="button">Agregar </button>
-    <%end %>
-</section>
+          </thead>
+          <tbody>
+            <% @specialties.each do |specialty|  %>
+              <tr>
+                <td><%= specialty.id  %></td>
+                <td><%=specialty.name%></td>
+                <td>
+                  <%= link_to(specialty, method: :delete) do %>
+                    <i class="fa fa-ban"></i>
+                  <%end %>
+                  <%= link_to (edit_specialty_path(specialty.id)) do %>
+                    <i class="fa fa-pencil"></i>
+                  <%end %>
+                </td>
+              </tr>
+            <%end %>
+          </tbody>
+        </table>
+      </div>
+      <%= link_to (new_specialty_path) do  %>
+        <button type="button" class="btn btn-primary" name="button">Agregar </button>
+      <%end %>
+  </section>
+
+</div>
