@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'login_as/index'
+
   #devise_for :admins
   #devise_for :users
 
