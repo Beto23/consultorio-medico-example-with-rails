@@ -1,10 +1,57 @@
+<% if new_user_session_path  %>
+  <% titulo = "Registrar Secretaria" %>
+  <% clase = "sign-up" %>
+<%elsif new_admin_session_path%>
+  <%= titulo = "Administrador" %>
+<%end%>
 <% if admin_signed_in? %>
-  <div class="container-iniciar row center-xs middle-xs margen">
-    <% if new_user_session_path  %>
-      <%= render "newSecre" %>
-    <%elsif new_admin_session_path %>
-    <%= render "newAdmin" %>
-    <%end%>
+  <% if new_user_session_path  %>
+    <div class="container-iniciar sign-up  row center-xs middle-xs margen">
+  <%elsif new_admin_session_path%>
+    <div class="container-iniciar row center-xs middle-xs margen">
+  <%end %>
+    <div>
+      <h2 class="title-log"><b><%= titulo  %></b></h2>
+      <div class="container-iniciar-form width-form">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
+
+          <% if new_user_session_path  %>
+            <div class="field">
+              <%= f.label :first_name %><br />
+              <%= f.text_field :first_name, autofocus: true, class:"form-control2" %>
+            </div>
+
+            <div class="field">
+              <%= f.label :last_name %><br />
+              <%= f.text_field :last_name, autofocus: true, class:"form-control2" %>
+            </div>
+          <%end%>
+
+          <div class="field">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, class:"form-control2" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :password, "Contraseña" %>
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> caracteres minimo)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "off", class:"form-control2" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :password_confirmation, "Confirmar Contraseña" %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control2" %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "Crear cuenta", class:"btn btn-success btn-log" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 <%else %>
   <%= render "partials/err404" %>
