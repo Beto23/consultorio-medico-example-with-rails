@@ -1,5 +1,5 @@
 class SpecialtiesController < ApplicationController
-
+  before_action :validate_user
   before_action :set_specialty, except: [:index, :new, :create]
 
   #Para pasar datos a la vista desde el controller se utilizan variables de clase
@@ -48,6 +48,12 @@ class SpecialtiesController < ApplicationController
 
   def specialty_params
     params.require(:specialty).permit(:name)
+  end
+
+  def validate_user
+    unless user_signed_in?
+      redirect_to new_user_session_path, alert: "Necesitas iniciar sesión!"
+    end
   end
 
 end
