@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  #devise_for :users
+
+  devise_for :users, controllers:{
+    registrations: 'users/registrations'
+  }
   resources :specialties#, only: [:create, :destroy, :update, :index]
 
   # The priority is based upon order of creation: first created -> highest priority.
