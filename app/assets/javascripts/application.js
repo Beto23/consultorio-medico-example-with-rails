@@ -19,6 +19,6 @@
 var hwindow = $(window).height();
 var encabezado = $(".header-home").height();
 var tamañoContainer = (hwindow-encabezado);
-$('.container').css({
+$('.main-container').css({
   height: tamañoContainer
 });
