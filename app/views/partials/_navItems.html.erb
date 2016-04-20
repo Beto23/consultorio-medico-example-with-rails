@@ -1,0 +1,20 @@
+<ul class="row margen start-xs">
+  <li class="col-xs-2  row margen center-xs"><%= link_to "Inicio", root_path, class:"nav-items" %></li>
+
+  <% if user_signed_in? || admin_signed_in? %>
+    <li class="col-md  row margen center-xs"><%= link_to "Consultas", specialties_path, class:"nav-items"  %></li>
+    <li class="col-md  row margen center-xs"><%= link_to "Pacientes", specialties_path, class:"nav-items"  %></li>
+    <li class="col-md  row margen center-xs"><%= link_to "Doctores", specialties_path, class:"nav-items"  %></li>
+      <% if admin_signed_in? %>
+      <li class="col-md  row margen center-xs"><%= link_to "Especialidades", specialties_path, class:"nav-items"  %></li>
+      <li class="col-md  row margen center-xs"><%= link_to "Usuarios", new_user_registration_path, class:"nav-items" %></li>
+      <li class="col-md  row margen center-xs"><%= link_to "Cerrar sesión", destroy_admin_session_path, method: :delete, class:"nav-items" %></li>
+      <%else %>
+      <li class="col-md  row margen center-xs"><%= link_to "Cerrar sesión", destroy_user_session_path, method: :delete, class:"nav-items" %></li>
+      <%end %>
+  <%else %>
+    <li class="col-xs-2  row margen center-xs"><%= link_to "Contacto", root_path, class:"nav-items"  %></li>
+    <li class="col-xs-2  row margen center-xs"><%= link_to "Acerca de", root_path, class:"nav-items"  %></li>
+    <li class="col-xs-2  row margen center-xs"><%= link_to "Iniciar Sesión", login_as_index_path, class:"nav-items" %></li>
+  <%end %>
+</ul>

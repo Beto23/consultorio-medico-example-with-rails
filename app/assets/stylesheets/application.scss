@@ -27,6 +27,10 @@
    font-family: 'Raleway', sans-serif !important;
  }
 
+ h2{
+   text-align: center;
+ }
+
  .margen{
    margin: 0;
  }
@@ -104,3 +108,4 @@ a{
 @import "logIn.scss";
 @import "forms.scss";
 @import "err404.scss";
+@import 'login_as.scss';

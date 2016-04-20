@@ -1,2 +1,17 @@
-<h1>LoginAs#index</h1>
-<p>Find me in app/views/login_as/index.html.erb</p>
+<div class="container">
+  <h2>Iniciar sesión como:</h2>
+  <div class="loginAs row between-xs">
+    <div class="doctor row center-xs">
+      <%= image_tag("doctor.jpg", :alt => "image", class: "img-circle col-xs-12")%>
+      <%= link_to "Doctor" %>
+    </div>
+    <div class="secre row center-xs">
+      <%= image_tag("secre.png", :alt => "image", class: "img-circle col-xs-12" ) %>
+      <%= link_to "Secretaria", new_user_session_path %>
+    </div>
+    <div class="admin row center-xs">
+      <%= image_tag("admin.jpg", :alt => "image", class: "img-circle col-xs-12" ) %>
+      <%= link_to "Administrador", new_admin_session_path %>
+    </div>
+  </div>
+</div>
