@@ -15,3 +15,10 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+var hwindow = $(window).height();
+var encabezado = $(".header-home").height();
+var tamañoContainer = (hwindow-encabezado);
+$('.container').css({
+  height: tamañoContainer
+});
