@@ -1,0 +1,32 @@
+<div class="container">
+  <section class="container-listado">
+      <div class="container-all-listado">
+        <h2>Secretarias</h2>
+        <hr>
+        <table class="table table-striped container-all-listado-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Correo</th>
+              <th>Día creado</th>
+              <th># veces conectado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @users.each do |user| %>
+              <tr>
+                <td><%= user.id  %></td>
+                <td><%=user.email%></td>
+                <td><%=user.created_at %></td>
+                <td><%=user.sign_in_count %></td>
+              </tr>
+            <%end %>
+          </tbody>
+        </table>
+      </div>
+      <%= link_to (new_user_registration_path) do  %>
+        <button type="button" class="btn btn-primary" name="button">Agregar </button>
+      <%end %>
+  </section>
+
+</div>
