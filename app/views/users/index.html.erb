@@ -7,17 +7,19 @@
           <thead>
             <tr>
               <th>#</th>
-              <th>Correo</th>
-              <th>Día creado</th>
-              <th># veces conectado</th>
+              <th>Name</th>
+              <th>Last name</th>
+              <th>Email</th>
+              <th>Sign in count</th>
             </tr>
           </thead>
           <tbody>
             <% @users.each do |user| %>
               <tr>
                 <td><%= user.id  %></td>
+                <td><%= user.first_name %></td>
+                <td><%= user.last_name %></td>
                 <td><%=user.email%></td>
-                <td><%=user.created_at %></td>
                 <td><%=user.sign_in_count %></td>
               </tr>
             <%end %>
