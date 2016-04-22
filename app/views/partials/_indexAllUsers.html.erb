@@ -1,0 +1,37 @@
+<% titulo ||= "Secretarias" %>
+<% table ||= @users  %>
+<% enlace ||= new_user_registration_path %>
+<div class="container">
+  <section class="container-listado">
+      <div class="container-all-listado">
+        <h2><%= titulo %></h2>
+        <hr>
+        <table class="table table-striped container-all-listado-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Last name</th>
+              <th>Email</th>
+              <th>Sign in count</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% table.each do |field| %>
+              <tr>
+                <td><%= field.id  %></td>
+                <td><%= field.first_name %></td>
+                <td><%= field.last_name %></td>
+                <td><%=field.email%></td>
+                <td><%=field.sign_in_count %></td>
+              </tr>
+            <%end %>
+          </tbody>
+        </table>
+      </div>
+      <%= link_to (enlace) do  %>
+        <button type="button" class="btn btn-primary" name="button">Agregar </button>
+      <%end %>
+  </section>
+
+</div>
