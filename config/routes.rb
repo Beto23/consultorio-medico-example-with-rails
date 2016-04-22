@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     registrations: 'doctors/registrations'
   }
 
-  resources :doctors, only: [:index, :show]
+  resources :doctors, only: [:index, :show] do
+    resources :medics, only: [:create]
+  end
   get 'login_as/index'
 
   #devise_for :admins
