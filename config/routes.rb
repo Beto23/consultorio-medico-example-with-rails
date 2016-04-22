@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  resources :specialties#, only: [:create, :destroy, :update, :index]
 
+  devise_for :doctors
   get 'login_as/index'
 
   #devise_for :admins
@@ -14,7 +16,6 @@ Rails.application.routes.draw do
   }
   resources :users, only: [:index, :show]
 
-  resources :specialties#, only: [:create, :destroy, :update, :index]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
