@@ -32,7 +32,7 @@ class MedicsController < ApplicationController
         format.html { redirect_to medics_path, notice: 'Doctor was successfully created.' }
         format.json { render :show, status: :created, location: @medic }
       else
-        format.html { render :new }
+        format.html { redirect_to medics_path, alert: 'Doctor has already been created' }
         format.json { render json: @medic.errors, status: :unprocessable_entity }
       end
     end
