@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   resources :specialties#, only: [:create, :destroy, :update, :index]
 
-  devise_for :doctors
+  devise_for :doctors, controllers:{
+    registrations: 'doctors/registrations'
+  }
+
   resources :doctors, only: [:index, :show]
   get 'login_as/index'
 
