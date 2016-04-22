@@ -1,5 +1,5 @@
-<div class="container">
-  <h2>Agregar Informacion Doctor</h2>
+<div class="container form-Medic">
+  <h4>Agregar Informacion Doctor</h4>
   <div class="container-iniciar-form">
     <%= form_for([@doctor,@medic])  do |f| %>
       <% if @medic.errors.any? %>
@@ -14,8 +14,7 @@
         </div>
       <% end %>
       <div class="field">
-        <%= f.label :User %><br />
-        <%= f.text_field :doctor_id, :value => @doctor.id,  autofocus: true, class:"form-control"%>
+        <%= f.text_field :doctor_id, :value => @doctor.id,  autofocus: true, class:"input-id"%>
       </div>
       <div class="field">
         <%= f.label :phone %><br />

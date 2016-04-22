@@ -1,4 +1,8 @@
-<h3><%= @doctor.first_name  %></h3>
-<h3><%= @doctor.last_name  %></h3>
-<h2>Agregar informacion personal</h2>
+<div class="show-doctor row center-xs middle-xs margen">
+  <div>
+    <i class="fa fa-user-md" aria-hidden="true"></i>
+  </div>
+  <h3> Dr. <%= @doctor.first_name  %></h3>
+  <h3><%= @doctor.last_name  %></h3>
+</div>
 <%= render "medics/formMedics" %>
