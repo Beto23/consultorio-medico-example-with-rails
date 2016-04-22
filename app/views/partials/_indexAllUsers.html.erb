@@ -1,6 +1,7 @@
 <% titulo ||= "Secretarias" %>
 <% table ||= @users  %>
 <% enlace ||= new_user_registration_path %>
+<% showUser ||= "secre" %>
 <div class="container">
   <section class="container-listado">
       <div class="container-all-listado">
@@ -26,6 +27,13 @@
                 <td><%=field.email%></td>
                 <td><%=field.sign_in_count %></td>
                 <td><%=time_ago_in_words field.updated_at %> ago</td>
+                <%if showUser != "secre"  %>
+                  <td>
+                    <%= link_to  field do %>
+                      <i class="fa fa-info-circle" aria-hidden="true"></i>
+                    <%end %>
+                  </td>
+                <%end %>
               </tr>
             <%end %>
           </tbody>

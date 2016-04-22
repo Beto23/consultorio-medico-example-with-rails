@@ -4,7 +4,7 @@ class DoctorsController < ApplicationController
     @doctors = Doctor.all
   end
   def show
-    #code
+    @doctor = Doctor.find(params[:id])
   end
 
 end
