@@ -14,6 +14,7 @@
               <th>Last name</th>
               <th>Email</th>
               <th>Sign in count</th>
+              <th>Update</th>
             </tr>
           </thead>
           <tbody>
@@ -24,6 +25,7 @@
                 <td><%= field.last_name %></td>
                 <td><%=field.email%></td>
                 <td><%=field.sign_in_count %></td>
+                <td><%=time_ago_in_words field.updated_at %> ago</td>
               </tr>
             <%end %>
           </tbody>
