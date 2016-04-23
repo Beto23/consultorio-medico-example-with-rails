@@ -2,6 +2,7 @@
 <% table ||= @users  %>
 <% enlace ||= new_user_registration_path %>
 <% showUser ||= "secre" %>
+<% btn ||= "Create new secretary" %>
 <div class="container">
   <section class="container-listado">
       <div class="container-all-listado">
@@ -40,7 +41,12 @@
         </table>
       </div>
       <%= link_to (enlace) do  %>
-        <button type="button" class="btn btn-primary" name="button">Agregar </button>
+        <button type="button" class="btn btn-primary" name="button"><%= btn %> </button>
+      <%end %>
+      <% if titulo != "Secretarias"  %>
+        <%= link_to (medics_path) do  %>
+          <button type="button" class="btn btn-default" name="button">Show information doctors </button>
+        <%end %>
       <%end %>
   </section>
 
