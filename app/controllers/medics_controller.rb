@@ -1,4 +1,7 @@
 class MedicsController < ApplicationController
+  before_action :authenticate_admin!
+  before_action :authenticate_user!, except: [:create, :update, :destroy]
+  before_action :authenticate_doctor!, only: [:update]
   before_action :set_medic, only: [:show, :edit, :update, :destroy]
 
   # GET /medics
