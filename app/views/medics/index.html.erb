@@ -1,7 +1,7 @@
 <div class="container">
   <section class="container-listado">
       <div class="container-all-listado">
-        <h2>Doctores</h2>
+        <h2>Doctors</h2>
         <hr>
         <table class="table table-striped container-all-listado-table">
           <thead>
@@ -23,11 +23,19 @@
                 <td><%=medic.specialty.name%></td>
                 <td><%=medic.phone %></td>
                 <td><%=medic.cell_phone %></td>
+                <td>
+                  <%= link_to(medic, method: :delete) do %>
+                    <i class="fa fa-ban"></i>
+                  <%end %>
+                </td>
               </tr>
             <%end %>
           </tbody>
         </table>
       </div>
+      <%= link_to (doctors_path) do  %>
+        <button type="button" class="btn btn-default" name="button">Go back </button>
+      <%end %>
   </section>
 
 </div>

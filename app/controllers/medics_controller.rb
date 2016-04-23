@@ -58,7 +58,7 @@ class MedicsController < ApplicationController
   def destroy
     @medic.destroy
     respond_to do |format|
-      format.html { redirect_to medics_url, notice: 'Medic was successfully destroyed.' }
+      format.html { redirect_to medics_path, notice: 'Medic was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
