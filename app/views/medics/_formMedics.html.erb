@@ -2,17 +2,6 @@
   <h4>Agregar Informacion Doctor</h4>
   <div class="container-iniciar-form">
     <%= form_for([@doctor, @medic])  do |f| %>
-      <% if @medic.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@medic.errors.count, "error") %> prohibited this medic from being saved:</h2>
-
-          <ul>
-          <% @medic.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-          </ul>
-        </div>
-      <% end %>
       <div class="field">
         <%= f.text_field :doctor_id, :value => @doctor.id,  autofocus: true, class:"input-id"%>
       </div>
