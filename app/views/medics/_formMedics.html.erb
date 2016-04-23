@@ -1,7 +1,7 @@
 <div class="container form-Medic">
   <h4>Agregar Informacion Doctor</h4>
   <div class="container-iniciar-form">
-    <%= form_for([@doctor,@medic])  do |f| %>
+    <%= form_for([@doctor, @medic])  do |f| %>
       <% if @medic.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@medic.errors.count, "error") %> prohibited this medic from being saved:</h2>
@@ -18,15 +18,15 @@
       </div>
       <div class="field">
         <%= f.label :phone %><br />
-        <%= f.text_field :phone, autofocus: true, class:"form-control"%>
+        <%= f.text_field :phone, autofocus: true, class:"form-control", :required => true%>
       </div>
       <div class="field">
         <%= f.label :cell_phone %><br />
-        <%= f.text_field :cell_phone, autofocus: true, class:"form-control"%>
+        <%= f.text_field :cell_phone, autofocus: true, class:"form-control", :required => true%>
       </div>
       <div class="field">
         <%= f.label :address %><br />
-        <%= f.text_field :address, autofocus: true, class:"form-control"%>
+        <%= f.text_field :address, autofocus: true, class:"form-control", :required => true%>
       </div>
       <div class="field">
         <%= f.label :especialidad %><br />
