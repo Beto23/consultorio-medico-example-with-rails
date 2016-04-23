@@ -5,6 +5,15 @@
 //Header
 .header-home{
   background: #F6F6F6;
+  .header-user{
+    i{
+      font-size: 1.4em;
+      margin-right: .5em;
+    }
+    p{
+      margin: 0;
+    }
+  }
   .img-logo{
     height: 4em;
   }

@@ -1,9 +1,25 @@
 <header class="header-home">
 	<div class="row margen between-xs">
-		<div class="col-md row margen middle-xs">
+		<div class="col-xs-8 row margen middle-xs">
 			<%= image_tag("logo.png", :alt => "image", class: "img-logo" ) %>
 			<h1>Buena Salud</h1>
 		</div>
+		<% if user_signed_in?  %>
+			<div class="header-user row middle-xs margen col-md end-xs">
+				<i class="fa fa-user" aria-hidden="true"></i>
+				<p><%= current_user.first_name%> <%= current_user.last_name%> (Secretaria)</p>
+			</div>
+		<%elsif admin_signed_in?  %>
+			<div class="header-user row middle-xs margen col-md end-xs">
+				<i class="fa fa-user" aria-hidden="true"></i>
+				<p><%= current_admin.first_name%> <%= current_admin.last_name%> (Administrator)</p>
+			</div>
+		<%elsif doctor_signed_in? %>
+			<div class="header-user row middle-xs margen col-md end-xs">
+				<i class="fa fa-user" aria-hidden="true"></i>
+				<p><%= current_doctor.first_name%> <%= current_doctor.last_name%> (Doctor)</p>
+			</div>
+		<%end  %>
 	</div>
 	<nav class="header-home-nav">
 		<%= render "partials/navItems" %>
