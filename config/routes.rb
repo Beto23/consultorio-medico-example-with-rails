@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :patients
   resources :specialties#, only: [:create, :destroy, :update, :index]
   resources :medics
   devise_for :doctors, controllers:{

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160422181216) do
+ActiveRecord::Schema.define(version: 20160423200731) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -65,6 +65,30 @@ ActiveRecord::Schema.define(version: 20160422181216) do
 
   add_index "medics", ["doctor_id"], name: "index_medics_on_doctor_id"
   add_index "medics", ["specialty_id"], name: "index_medics_on_specialty_id"
+
+  create_table "patients", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.date     "birth_date"
+    t.string   "gender"
+    t.string   "state"
+    t.string   "city"
+    t.string   "address"
+    t.string   "cp"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "cell_phone"
+    t.string   "blood_type"
+    t.string   "smoking"
+    t.string   "alcoholism"
+    t.string   "hereditary_background"
+    t.string   "pathological"
+    t.string   "non_pathological"
+    t.string   "allergies"
+    t.string   "surgeries"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
 
   create_table "specialties", force: :cascade do |t|
     t.string   "name"
