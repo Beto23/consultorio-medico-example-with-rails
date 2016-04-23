@@ -15,6 +15,7 @@ class MedicsController < ApplicationController
   # GET /medics/new
   def new
     @medic = Medic.new
+    @giselle = Medic.all
     @doctors = Doctor.all
   end
 

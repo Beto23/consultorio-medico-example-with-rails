@@ -105,6 +105,18 @@ a{
     text-align: left;
  }
 
+ .info-doc{
+    width: 80%;
+    margin: 0 auto;
+    background: #E6E6E6;
+    text-align: center;
+    padding: 1em;
+    i{
+      font-size: 1.4em;
+      padding: 0 1em;
+    }
+ }
+
 @import "home.css.scss";
 @import "session.scss";
 @import "logIn.scss";
