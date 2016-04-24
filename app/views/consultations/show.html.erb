@@ -1,24 +1,26 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <p>
+    <strong>Patient:</strong>
+    <%= @consultation.patient.first_name %><%= @consultation.patient.last_name %>
+  </p>
+  <p>
+    <strong>Medic:</strong>
+    <%= @consultation.medic.doctor.first_name %>
+  </p>
+  <p>
+    <strong>Time:</strong>
+    <%= @consultation.time %>
+  </p>
 
-<p>
-  <strong>Time:</strong>
-  <%= @consultation.time %>
-</p>
+  <p>
+    <strong>Fecha:</strong>
+    <%= @consultation.fecha %>
+  </p>
 
-<p>
-  <strong>Fecha:</strong>
-  <%= @consultation.fecha %>
-</p>
 
-<p>
-  <strong>Medic:</strong>
-  <%= @consultation.medic %>
-</p>
 
-<p>
-  <strong>Patient:</strong>
-  <%= @consultation.patient %>
-</p>
 
-<%= link_to 'Edit', edit_consultation_path(@consultation) %> |
-<%= link_to 'Back', consultations_path %>
+  <%= link_to 'Edit', edit_consultation_path(@consultation) %> |
+  <%= link_to 'Back', consultations_path %>
+</div>

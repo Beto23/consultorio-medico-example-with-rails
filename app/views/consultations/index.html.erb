@@ -1,33 +1,44 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <section class="container-listado">
+    <div class="container-all-listado">
+      <h2>Consultations</h2>
+      <p id="notice"><%= notice %></p>
+      <hr>
+      <table class="table table-striped container-all-listado-table">
+        <thead>
+          <tr>
+            <th>Patient</th>
+            <th>Medic</th>
+            <th>Fecha</th>
+            <th>Time</th>
+            <th></th>
+          </tr>
+        </thead>
 
-<h1>Listing Consultations</h1>
+        <tbody>
+          <% @consultations.each do |consultation| %>
+            <tr>
+              <td><%= consultation.patient.first_name %></td>
+              <td><%= consultation.medic.doctor.first_name %></td>
+              <td><%= consultation.fecha %></td>
+              <td><%= consultation.time %></td>
+              <td>
+                <%= link_to (consultation), method: :delete, data: { confirm: 'Are you sure?' } do%>
+                  <i class="fa fa-ban"></i>
+                <%end %>
+                <%= link_to (edit_consultation_path(consultation)) do %>
+                  <i class="fa fa-pencil"></i>
+                <%end %>
+                <%= link_to (consultation) do %>
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                <%end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Time</th>
-      <th>Fecha</th>
-      <th>Medic</th>
-      <th>Patient</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @consultations.each do |consultation| %>
-      <tr>
-        <td><%= consultation.time %></td>
-        <td><%= consultation.fecha %></td>
-        <td><%= consultation.medic %></td>
-        <td><%= consultation.patient %></td>
-        <td><%= link_to 'Show', consultation %></td>
-        <td><%= link_to 'Edit', edit_consultation_path(consultation) %></td>
-        <td><%= link_to 'Destroy', consultation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
- <%= render "partials/modal" %>
-<br>
-
-<%= link_to 'New Consultation', new_consultation_path %>
+            </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+     <%= render "partials/modal" %>
+  </section>
+</div>
