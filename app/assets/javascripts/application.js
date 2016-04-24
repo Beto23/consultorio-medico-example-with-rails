@@ -33,3 +33,12 @@ $('.container').css({
 $('body').find('input:text').addClass('form-control');
 $('body').find('textarea').addClass('form-control');
 $('body').find('select').addClass('form-control');
+
+$("#consultation_fecha_1i").css({
+  width: '6em'
+});
+$("#consultation_fecha_2i").css({
+  width: '6em'
+});$("#consultation_fecha_3i").css({
+  width: '6em'
+});

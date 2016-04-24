@@ -1,33 +1,39 @@
-<%= form_for(@consultation) do |f| %>
-  <% if @consultation.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@consultation.errors.count, "error") %> prohibited this consultation from being saved:</h2>
 
-      <ul>
-      <% @consultation.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <% nameBtn ||= "Agregar"  %>
+      <%= form_for :consultation, url: '/consultations' do |f| %>
+        <div class="row">
+          <div class="col-md">
+            <div class="field">
+              <%= f.label :time %><br>
+              <%= f.text_field :time %>
+            </div>
+            <div class="field">
+              <%= f.label :medic_id %><br>
+              <%= f.text_field :medic_id %>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="field">
+              <%= f.label :fecha %><br>
+              <div class="row margen">
+                <%= f.date_select :fecha %>
+              </div>
+            </div>
+            <div class="field">
+              <%= f.label :patient_id %><br>
+              <%= f.text_field :patient_id %>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <%= link_to (consultations_path) do %>
+          <button type="button" class="btn btn-default">Regresar</button>
+        <%end %>
+
+        <%= f.submit nameBtn, class:"btn btn-primary"  %>
+
       <% end %>
-      </ul>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :time %><br>
-    <%= f.text_field :time %>
-  </div>
-  <div class="field">
-    <%= f.label :fecha %><br>
-    <%= f.date_select :fecha %>
-  </div>
-  <div class="field">
-    <%= f.label :medic_id %><br>
-    <%= f.text_field :medic_id %>
-  </div>
-  <div class="field">
-    <%= f.label :patient_id %><br>
-    <%= f.text_field :patient_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
