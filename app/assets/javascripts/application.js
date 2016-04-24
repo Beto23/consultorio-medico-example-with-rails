@@ -15,17 +15,19 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
-
 var hwindow = $(window).height();
 var encabezado = $(".header-home").height();
 var tamañoContainer = (hwindow-encabezado);
 $('.main-container').css({
   height: tamañoContainer
 });
+$('#err404').css({
+  height: tamañoContainer
+});
 
 $('.container').css({
   "max-height": tamañoContainer + 'px',
-  overflow: "auto" 
+  overflow: "auto"
 });
 
 $('body').find('input:text').addClass('form-control');
