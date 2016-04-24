@@ -1,3 +1,4 @@
+<% nameBnt ||= "Create patient" %>
 <div class="container">
   <%= form_for(@patient) do |f| %>
 
@@ -102,7 +103,7 @@
 
     <div class="actions btn-patient row">
       <%= link_to 'Back', patients_path, class:"btn btn-default" %>
-      <%= f.submit "Create patient", class:"btn btn-primary"  %>
+      <%= f.submit nameBnt, class:"btn btn-primary"  %>
     </div>
   <% end %>
 </div>
