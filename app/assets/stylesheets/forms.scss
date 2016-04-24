@@ -29,3 +29,31 @@
     border-radius: 4px;
   }
 }
+
+.sub-title{
+  padding: .4em;
+  background: #0157A0;
+  margin: 1em 0;
+  color: white;
+  border-radius: 4px;
+}
+
+.foto-expediente{
+  img{
+    width: 10em;
+    height: 10em;
+    background: red;
+    margin: 0 0 1em 0;
+    border: 3px solid;
+  }
+}
+
+.info-personal{
+  margin-bottom: 3em;
+}
+
+.btn-patient{
+  a{
+    margin-right: 1em;
+  }
+}

@@ -1,84 +1,108 @@
-<%= form_for(@patient) do |f| %>
+<div class="container">
+  <%= form_for(@patient) do |f| %>
 
-  <%= render "partials/fullMessages" %>
+    <%= render "partials/fullMessages" %>
+    <% if user_signed_in? || admin_signed_in? %>
+      <h3 class="sub-title">Personal information</h3>
 
-  <div class="field">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :birth_date %><br>
-    <%= f.date_select :birth_date %>
-  </div>
-  <div class="field">
-    <%= f.label :gender %><br>
-    <%= f.text_field :gender %>
-  </div>
-  <div class="field">
-    <%= f.label :state %><br>
-    <%= f.text_field :state %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :cp %><br>
-    <%= f.text_field :cp %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :cell %><br>
-    <%= f.text_field :cell_phone %>
-  </div>
-  <div class="field">
-    <%= f.label :blood_type %><br>
-    <%= f.text_field :blood_type %>
-  </div>
-  <div class="field">
-    <%= f.label :smoking %><br>
-    <%= f.text_field :smoking %>
-  </div>
-  <div class="field">
-    <%= f.label :alcoholism %><br>
-    <%= f.text_field :alcoholism %>
-  </div>
-  <div class="field">
-    <%= f.label :hereditary_background %><br>
-    <%= f.text_field :hereditary_background %>
-  </div>
-  <div class="field">
-    <%= f.label :pathological %><br>
-    <%= f.text_field :pathological %>
-  </div>
-  <div class="field">
-    <%= f.label :non_pathological %><br>
-    <%= f.text_field :non_pathological %>
-  </div>
-  <div class="field">
-    <%= f.label :allergies %><br>
-    <%= f.text_field :allergies %>
-  </div>
-  <div class="field">
-    <%= f.label :surgeries %><br>
-    <%= f.text_field :surgeries %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+      <div class="info-personal row between-xs">
+        <div class="foto-expediente col-xs-2">
+          <img src="" alt="Gravatar" />
+        </div>
+        <div class="info-personal row col-xs-9">
+          <div class="info-personal-form-uno col-xs-6">
+            <div class="field">
+              <%= f.label :first_name %><br>
+              <%= f.text_field :first_name %>
+            </div>
+            <div class="field">
+              <%= f.label :last_name %><br>
+              <%= f.text_field :last_name %>
+            </div>
+            <div class="field">
+              <%= f.label :gender %><br>
+              <%= f.text_field :gender %>
+            </div>
+            <div class="field">
+              <%= f.label :state %><br>
+              <%= f.text_field :state %>
+            </div>
+            <div class="field">
+              <%= f.label :phone %><br>
+              <%= f.text_field :phone %>
+            </div>
+          </div>
+          <div class="info-personal-form-uno col-xs-6">
+            <div class="field">
+              <%= f.label :city %><br>
+              <%= f.text_field :city %>
+            </div>
+            <div class="field">
+              <%= f.label :address %><br>
+              <%= f.text_field :address %>
+            </div>
+            <div class="field">
+              <%= f.label :cp %><br>
+              <%= f.text_field :cp %>
+            </div>
+            <div class="field">
+              <%= f.label :email %><br>
+              <%= f.text_field :email %>
+            </div>
+            <div class="field">
+              <%= f.label :cell %><br>
+              <%= f.text_field :cell_phone %>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    <%end %>
+    <% if doctor_signed_in? || admin_signed_in? %>
+      <h3 class="sub-title">Background personal</h3>
+      <div class="info-personal row between-xs">
+        <div class="col-xs-6">
+          <div class="field">
+            <%= f.label :blood_type %><br>
+            <%= f.text_field :blood_type %>
+          </div>
+          <div class="field">
+            <%= f.label :smoking %><br>
+            <%= f.text_field :smoking %>
+          </div>
+          <div class="field">
+            <%= f.label :alcoholism %><br>
+            <%= f.text_field :alcoholism %>
+          </div>
+          <div class="field">
+            <%= f.label :hereditary_background %><br>
+            <%= f.text_area :hereditary_background %>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="field">
+            <%= f.label :pathological %><br>
+            <%= f.text_area :pathological %>
+          </div>
+          <div class="field">
+            <%= f.label :non_pathological %><br>
+            <%= f.text_area :non_pathological %>
+          </div>
+          <div class="field">
+            <%= f.label :allergies %><br>
+            <%= f.text_area :allergies %>
+          </div>
+          <div class="field">
+            <%= f.label :surgeries %><br>
+            <%= f.text_area :surgeries %>
+          </div>
+        </div>
+      </div>
+    <%end %>
+
+    <div class="actions btn-patient row">
+      <%= link_to 'Back', patients_path, class:"btn btn-default" %>
+      <%= f.submit "Create patient", class:"btn btn-primary"  %>
+    </div>
+  <% end %>
+</div>
