@@ -1,94 +1,104 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <h2>Medical record</h2>
+  <div class="foto-expediente row center-xs">
+    <img src="" alt="Gravatar" />
+  </div>
+  <p id="notice"><%= notice %></p>
+  <div class="personal row center-xs">
+    <div class="col-md">
+      <p>
+        <strong>First name:</strong>
+        <%= @patient.first_name %>
+      </p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @patient.first_name %>
-</p>
+      <p>
+        <strong>Last name:</strong>
+        <%= @patient.last_name %>
+      </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @patient.last_name %>
-</p>
+      <p>
+        <strong>Gender:</strong>
+        <%= @patient.gender %>
+      </p>
+      <p>
+        <strong>Email:</strong>
+        <%= @patient.email %>
+      </p>
 
-<p>
-  <strong>Gender:</strong>
-  <%= @patient.gender %>
-</p>
+      <p>
+        <strong>Phone:</strong>
+        <%= @patient.phone %>
+      </p>
+      <p>
+        <strong>State:</strong>
+        <%= @patient.state %>
+      </p>
 
-<p>
-  <strong>State:</strong>
-  <%= @patient.state %>
-</p>
+      <p>
+        <strong>City:</strong>
+        <%= @patient.city %>
+      </p>
 
-<p>
-  <strong>City:</strong>
-  <%= @patient.city %>
-</p>
+      <p>
+        <strong>Address:</strong>
+        <%= @patient.address %>
+      </p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @patient.address %>
-</p>
+      <p>
+        <strong>Cp:</strong>
+        <%= @patient.cp %>
+      </p>
+      <p>
+        <strong>Cell:</strong>
+        <%= @patient.cell_phone %>
+      </p>
+    </div>
+  <div class="col-md">
+    <p>
+      <strong>Blood type:</strong>
+      <%= @patient.blood_type %>
+    </p>
 
-<p>
-  <strong>Cp:</strong>
-  <%= @patient.cp %>
-</p>
+    <p>
+      <strong>Smoking:</strong>
+      <%= @patient.smoking %>
+    </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @patient.email %>
-</p>
+    <p>
+      <strong>Alcoholism:</strong>
+      <%= @patient.alcoholism %>
+    </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @patient.phone %>
-</p>
+    <p>
+      <strong>Hereditary background:</strong>
+      <%= @patient.hereditary_background %>
+    </p>
+    <p>
+      <strong>Pathological:</strong>
+      <%= @patient.pathological %>
+    </p>
 
-<p>
-  <strong>Cell:</strong>
-  <%= @patient.cell_phone %>
-</p>
+    <p>
+      <strong>Non pathological:</strong>
+      <%= @patient.non_pathological %>
+    </p>
 
-<p>
-  <strong>Blood type:</strong>
-  <%= @patient.blood_type %>
-</p>
+    <p>
+      <strong>Allergies:</strong>
+      <%= @patient.allergies %>
+    </p>
 
-<p>
-  <strong>Smoking:</strong>
-  <%= @patient.smoking %>
-</p>
+    <p>
+      <strong>Surgeries:</strong>
+      <%= @patient.surgeries %>
+    </p>
+  </div>
+</div>
 
-<p>
-  <strong>Alcoholism:</strong>
-  <%= @patient.alcoholism %>
-</p>
 
-<p>
-  <strong>Hereditary background:</strong>
-  <%= @patient.hereditary_background %>
-</p>
 
-<p>
-  <strong>Pathological:</strong>
-  <%= @patient.pathological %>
-</p>
 
-<p>
-  <strong>Non pathological:</strong>
-  <%= @patient.non_pathological %>
-</p>
+  <%= link_to 'Edit', edit_patient_path(@patient) %> |
+  <%= link_to 'Back', patients_path %>
 
-<p>
-  <strong>Allergies:</strong>
-  <%= @patient.allergies %>
-</p>
-
-<p>
-  <strong>Surgeries:</strong>
-  <%= @patient.surgeries %>
-</p>
-
-<%= link_to 'Edit', edit_patient_path(@patient) %> |
-<%= link_to 'Back', patients_path %>
+</div>

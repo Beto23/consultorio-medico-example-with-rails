@@ -23,6 +23,11 @@ $('.main-container').css({
   height: tamañoContainer
 });
 
+$('.container').css({
+  "max-height": tamañoContainer + 'px',
+  overflow: "auto" 
+});
+
 $('body').find('input:text').addClass('form-control');
 $('body').find('textarea').addClass('form-control');
 $('body').find('select').addClass('form-control');
