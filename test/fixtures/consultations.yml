@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  time: MyString
+  fecha: 2016-04-24
+  medic_id: 
+  patient_id: 
+
+two:
+  time: MyString
+  fecha: 2016-04-24
+  medic_id: 
+  patient_id: 
