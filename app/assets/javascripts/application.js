@@ -22,3 +22,7 @@ var tamañoContainer = (hwindow-encabezado);
 $('.main-container').css({
   height: tamañoContainer
 });
+
+$('body').find('input:text').addClass('form-control');
+$('body').find('textarea').addClass('form-control');
+$('body').find('select').addClass('form-control');
