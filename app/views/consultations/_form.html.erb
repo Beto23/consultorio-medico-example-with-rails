@@ -5,23 +5,23 @@
           <div class="col-md">
             <div class="field">
               <%= f.label :time %><br>
-              <%= f.text_field :time %>
+              <%= f.text_field :time, :required => true %>
             </div>
             <div class="field">
               <%= f.label :medic_id %><br>
-              <%= f.text_field :medic_id %>
+              <%= f.text_field :medic_id, :required => true %>
             </div>
           </div>
           <div class="col-md">
             <div class="field">
               <%= f.label :fecha %><br>
               <div class="row margen">
-                <%= f.date_select :fecha %>
+                <%= f.date_select :fecha, :required => true %>
               </div>
             </div>
             <div class="field">
               <%= f.label :patient_id %><br>
-              <%= f.text_field :patient_id %>
+              <%= f.text_field :patient_id, :required => true %>
             </div>
           </div>
         </div>
