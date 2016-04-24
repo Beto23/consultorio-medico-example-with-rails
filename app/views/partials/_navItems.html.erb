@@ -12,12 +12,15 @@
 
   <% if user_signed_in? || admin_signed_in? || doctor_signed_in? %>
       <li class="col-md  row margen center-xs"><%= link_to "Consultas", specialties_path, class:"nav-items"  %></li>
-      <li class="col-md  row margen center-xs"><%= link_to "Pacientes", specialties_path, class:"nav-items"  %></li>
+      <li class="col-md  row margen center-xs"><%= link_to "Pacientes", patients_path, class:"nav-items"  %></li>
     <% if admin_signed_in? %>
       <li class="col-md  row margen center-xs"><%= link_to "Especialidades", specialties_path, class:"nav-items"  %></li>
       <li class="col-md  row margen center-xs"><%= link_to "Doctores", doctors_path, class:"nav-items"  %></li>
       <li class="col-md  row margen center-xs"><%= link_to "Secretarias", users_path, class:"nav-items" %></li>
-    <% elsif doctor_signed_in? || user_signed_in? %>
+    <%elsif user_signed_in? %>
+      <li class="col-md  row margen center-xs"><%= link_to "Doctores", medics_path, class:"nav-items"  %></li>
+    <%end %>
+    <% if doctor_signed_in? || user_signed_in? %>
       <li class="col-md  row margen center-xs"><%= link_to "Actualizar mi cuenta", actualizar, class:"nav-items" %></li>
     <%end %>
     <li class="col-md  row margen center-xs"><%= link_to "Cerrar sesión", cerrar, method: :delete, class:"nav-items" %></li>
