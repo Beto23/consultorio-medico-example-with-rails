@@ -7,6 +7,7 @@
       <table class="table table-striped container-all-listado-table">
         <thead>
           <tr>
+            <th>#</th>
             <th>Patient</th>
             <th>Medic</th>
             <th>Fecha</th>
@@ -17,6 +18,7 @@
         <tbody>
           <% @consultations.each do |consultation| %>
             <tr>
+              <td><%= consultation.id %></td>
               <td><%= consultation.patient.first_name %></td>
               <td><%= consultation.medic.doctor.first_name %></td>
               <td><%= consultation.date %></td>
