@@ -11,6 +11,7 @@ class ConsultationsController < ApplicationController
   # GET /consultations/1
   # GET /consultations/1.json
   def show
+    @detail = Detail.new
   end
 
   # GET /consultations/new

@@ -1,21 +1,25 @@
+<% a = Detail.where('consultation_id' => @consultation.id)%>
 <div class="container">
-  <p id="notice"><%= notice %></p>
-  <p>
-    <strong>Patient:</strong>
-    <%= @consultation.patient.first_name %><%= @consultation.patient.last_name %>
-  </p>
-  <p>
-    <strong>Medic:</strong>
-    <%= @consultation.medic.doctor.first_name %>
-  </p>
-  <p>
-    <strong>Date:</strong>
-    <%= @consultation.date %>
-  </p>
-
-
-
-
-  <%= link_to 'Edit', edit_consultation_path(@consultation) %> |
-  <%= link_to 'Back', consultations_path %>
+  <div class="row middle-xs margen center-xs margen edit-consultation">
+    <div class="edit-consultation-edit container-iniciar-form">
+      <p id="notice"><%= notice %></p>
+      <p>
+        <strong>Patient:</strong>
+        <%= @consultation.patient.first_name %><%= @consultation.patient.last_name %>
+      </p>
+      <p>
+        <strong>Medic:</strong>
+        <%= @consultation.medic.doctor.first_name %>
+      </p>
+      <p>
+        <strong>Date:</strong>
+        <%= @consultation.date %>
+      </p>
+      <%= link_to 'Edit', edit_consultation_path(@consultation) %> |
+      <%= link_to 'Back', consultations_path %>
+      <% unless a.empty? %>
+          <%= render "partials/modal", botnName: "Detail consultation", title:"#{@consultation.patient.first_name }'s consultation", ruta:"details/form"%>
+      <%end %>
+    </div>
+  </div>
 </div>
