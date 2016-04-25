@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160424172147) do
+ActiveRecord::Schema.define(version: 20160425050435) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -43,6 +43,19 @@ ActiveRecord::Schema.define(version: 20160424172147) do
 
   add_index "consultations", ["medic_id"], name: "index_consultations_on_medic_id"
   add_index "consultations", ["patient_id"], name: "index_consultations_on_patient_id"
+
+  create_table "details", force: :cascade do |t|
+    t.integer  "consultation_id"
+    t.string   "reason"
+    t.string   "symptoms"
+    t.string   "diagnosis"
+    t.string   "medicament"
+    t.decimal  "total"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "details", ["consultation_id"], name: "index_details_on_consultation_id"
 
   create_table "doctors", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

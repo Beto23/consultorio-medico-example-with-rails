@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  consultation_id: 
+  reason: MyString
+  symptoms: MyString
+  diagnosis: MyString
+  medicament: MyString
+  total: 9.99
+
+two:
+  consultation_id: 
+  reason: MyString
+  symptoms: MyString
+  diagnosis: MyString
+  medicament: MyString
+  total: 9.99
