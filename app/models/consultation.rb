@@ -3,6 +3,7 @@ class Consultation < ActiveRecord::Base
   belongs_to :patient
   validates :patient_id, presence: true
   validates :medic_id, presence: true
-  validates :time, presence: true, length: { maximum: 5  }
-  validates :fecha, presence: true
+  validates :date, presence: true, :uniqueness => { :message => "and time of consultation is busy!"  }
+
+
 end
