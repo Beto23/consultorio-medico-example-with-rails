@@ -1,28 +1,29 @@
 
       <% nameBtn ||= "Agregar"  %>
-      <%= form_for :consultation, url: '/consultations' do |f| %>
+      <%= form_for @consultation , url: '/consultations' do |f| %>
+        <%= render "partials/fullMessages", objeto: @consultation %>
         <div class="row">
           <div class="col-md">
             <div class="field">
-              <%= f.label :time %><br>
-              <%= f.text_field :time, :required => true %>
+              <%= f.label :medic_id %>
+              <%= f.select :medic_id , options_for_select(Medic.all.collect {|p| [p.doctor.first_name, p.id]}) %>
             </div>
             <div class="field">
-              <%= f.label :medic_id %><br>
-              <%= f.text_field :medic_id, :required => true %>
+              <%= f.label :patient_id %>
+              <%= f.select :patient_id, options_for_select(Patient.all.collect {|p| [p.first_name, p.id]}) %>
             </div>
           </div>
           <div class="col-md">
             <div class="field">
-              <%= f.label :fecha %><br>
-              <div class="row margen">
-                <%= f.date_select :fecha, :required => true %>
+              <%= f.label :date %>
+              <div class='input-group date' id='datetimepicker1'>
+                  <%= f.text_field :date, :required => true %>
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
               </div>
             </div>
-            <div class="field">
-              <%= f.label :patient_id %><br>
-              <%= f.text_field :patient_id, :required => true %>
-            </div>
+
           </div>
         </div>
 

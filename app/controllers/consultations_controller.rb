@@ -5,6 +5,7 @@ class ConsultationsController < ApplicationController
   # GET /consultations.json
   def index
     @consultations = Consultation.all
+    @consultation = Consultation.new
   end
 
   # GET /consultations/1
@@ -69,6 +70,6 @@ class ConsultationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def consultation_params
-      params.require(:consultation).permit(:time, :fecha, :medic_id, :patient_id)
+      params.require(:consultation).permit(:date, :medic_id, :patient_id)
     end
 end

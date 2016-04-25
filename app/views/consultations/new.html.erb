@@ -1,5 +1,7 @@
-<h1>New Consultation</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', consultations_path %>
+<div class="row middle-xs margen center-xs margen edit-consultation">
+  <div class="edit-consultation-edit container-iniciar-form">
+    <h2>New consultation</h2>
+    <%= render 'form'%>
+  </div>
+  <%= link_to 'Show', @consultation %>
+</div>
