@@ -8,4 +8,5 @@ class Patient < ActiveRecord::Base
   validates :cp, presence: true, length: { minimum: 5  }, length: { maximum: 5  }
   validates :email, presence: true, length: { maximum: 50  }
   validates :phone, presence: true, length: { maximum: 14  }
+  has_many :consultations
 end

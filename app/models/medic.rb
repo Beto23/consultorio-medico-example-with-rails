@@ -5,4 +5,5 @@ class Medic < ActiveRecord::Base
   validates :phone, presence: true
   validates :address, presence: true
   validates :specialty_id, presence: true
+  has_many :consultations
 end
