@@ -8,16 +8,4 @@
 </div>
 <% if a == []%>
   <%= render "medics/formMedics" %>
-<%else %>
-  <% @medics.each do |medic|  %>
-    <hr>
-    <div class="info-doc">
-      <p><i class="fa fa-phone" aria-hidden="true"></i><%= medic.phone %> </p>
-      <p><i class="fa fa-mobile" aria-hidden="true"></i><%= medic.cell_phone %> </p>
-      <p><i class="fa fa-map-marker" aria-hidden="true"></i><%= medic.address %> </p>
-      <p><i class="fa fa-envelope" aria-hidden="true"></i><%= medic.doctor.email %> </p>
-      <p><i class="fa  fa-hospital-o" aria-hidden="true"></i><%= medic.specialty.name %> </p>
-
-    </div>
-  <%end %>
 <%end %>
