@@ -28,7 +28,7 @@ class DetailsController < ApplicationController
 
     respond_to do |format|
       if @detail.save
-        format.html { redirect_to @detail, notice: 'Detail was successfully created.' }
+        format.html { redirect_to consultations_path, notice: 'Detail was successfully created.' }
         format.json { render :show, status: :created, location: @detail }
       else
         format.html { render :new }

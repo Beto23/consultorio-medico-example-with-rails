@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :details
-  resources :consultations
+  resources :consultations do
+    resources :details, only: [:create, :destroy, :update]
+  end
   resources :patients
   resources :specialties#, only: [:create, :destroy, :update, :index]
   resources :medics
