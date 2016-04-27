@@ -1,4 +1,3 @@
-<% a = Detail.where('consultation_id' => @consultation.id)%>
 <div class="container">
   <div class="row middle-xs margen center-xs margen edit-consultation">
     <div class="edit-consultation-edit container-iniciar-form">
@@ -15,9 +14,32 @@
         <strong>Date:</strong>
         <%= @consultation.date %>
       </p>
+      <%unless @consultation.detail.nil? %>
+        <p>
+          <strong>Reason:</strong>
+          <%= @consultation.detail.reason %>
+        </p>
+        <p>
+          <strong>Symptoms:</strong>
+          <%= @consultation.detail.symptoms %>
+        </p>
+        <p>
+          <strong>Diagnosis:</strong>
+          <%= @consultation.detail.diagnosis %>
+        </p>
+        <p>
+          <strong>Medicament:</strong>
+          <%= @consultation.detail.medicament %>
+        </p>
+        <p>
+          <strong>Total:</strong>
+          $<%= @consultation.detail.total %>
+        </p>
+      <%end %>
+
       <%= link_to 'Edit', edit_consultation_path(@consultation) %> |
       <%= link_to 'Back', consultations_path %>
-      <% unless a.empty? %>
+      <%if @consultation.detail.nil? %>
           <%= render "partials/modal", botnName: "Detail consultation", title:"#{@consultation.patient.first_name }'s consultation", ruta:"details/form"%>
       <%end %>
     </div>
