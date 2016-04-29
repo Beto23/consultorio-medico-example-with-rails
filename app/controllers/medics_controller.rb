@@ -11,12 +11,12 @@ class MedicsController < ApplicationController
   # GET /medics/1
   # GET /medics/1.json
   def show
+    @Medic = Medic.new
   end
 
   # GET /medics/new
   def new
     @medic = Medic.new
-    @giselle = Medic.all
     @doctors = Doctor.all
   end
 

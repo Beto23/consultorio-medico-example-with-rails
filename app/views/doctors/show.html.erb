@@ -1,11 +1,31 @@
-<% a = Medic.where('doctor_id' => @doctor.id).each { |e| e  } %>
-<div class="show-doctor row center-xs middle-xs margen">
-  <div>
-    <i class="fa fa-user-md" aria-hidden="true"></i>
+<div class="container">
+  <div class="row middle-xs margen center-xs margen edit-consultation">
+    <div class="edit-consultation-edit container-iniciar-form">
+      <div class="row middle-xs center-xs">
+        <i class="fa fa-user-md" aria-hidden="true"></i>
+        <h3> Dr. <%= @doctor.first_name  %></h3>
+        <h3> <%= @doctor.last_name  %></h3>
+      </div>
+      <%unless @doctor.medic.nil? %>
+        <p>
+          <strong>Especilty:</strong>
+          <%= @doctor.medic.specialty.name %>
+        </p>
+      <p>
+        <strong>Phone:</strong>
+        <%= @doctor.medic.phone %>
+      </p>
+      <p>
+        <strong>Cell_phone:</strong>
+        <%= @doctor.medic.cell_phone %>
+      </p>    <p>
+            <strong>Address:</strong>
+            <%= @doctor.medic.address %>
+          </p>
+      <%end %>
+    </div>
   </div>
-  <h3> Dr. <%= @doctor.first_name  %></h3>
-  <h3> <%= @doctor.last_name  %></h3>
 </div>
-<% if a == []%>
+<% if @doctor.medic.nil?%>
   <%= render "medics/formMedics" %>
 <%end %>
