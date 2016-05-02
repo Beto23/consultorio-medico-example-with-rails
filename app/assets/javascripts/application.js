@@ -50,12 +50,14 @@ $(document).on('ready page:change', function() {
     // put here your custom picker options, that should be applied for all pickers
   });
   $(function () {
-      $('#datetimepicker1').datetimepicker();
+      $('#datetimepicker1').datetimepicker({
+        format: "YYYY-MM-DD"
+      });
   });
   $('.datetimerange').each(function(){
-    var $this = $(this)
-    var range1 = $($this.find('.input-group')[0])
-    var range2 = $($this.find('.input-group')[1])
+    var $this = $(this);
+    var range1 = $($this.find('.input-group')[0]);
+    var range2 = $($this.find('.input-group')[1]);
 
     if(range1.data("DateTimePicker").date() != null)
       range2.data("DateTimePicker").minDate(range1.data("DateTimePicker").date());
