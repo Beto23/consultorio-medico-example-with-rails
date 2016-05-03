@@ -1,6 +1,6 @@
 
       <% nameBtn ||= "Agregar"  %>
-      <%= form_for @consultation , url: '/consultations' do |f| %>
+      <%= form_for @consultation do |f| %>
         <%= render "partials/fullMessages", objeto: @consultation %>
         <div class="row">
           <div class="col-md">
