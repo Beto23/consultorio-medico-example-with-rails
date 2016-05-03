@@ -23,7 +23,16 @@
                   </span>
               </div>
             </div>
-
+            <div class="field">
+              <%= f.label :time %>
+              <select name ="consultation[time]">
+                <%hora = 8 %>
+                <%13.times do %>
+                  <option><%="#{hora}:00"  %></option>
+                  <%hora = hora + 1 %>
+                <%end %>
+              </select>
+            </div>
           </div>
         </div>
 

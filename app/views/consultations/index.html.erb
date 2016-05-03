@@ -10,7 +10,8 @@
             <th>#</th>
             <th>Patient</th>
             <th>Medic</th>
-            <th>Fecha</th>
+            <th>Date</th>
+            <th>Time</th>
             <th></th>
           </tr>
         </thead>
@@ -22,6 +23,7 @@
               <td><%= consultation.patient.first_name %></td>
               <td><%= consultation.medic.doctor.first_name %></td>
               <td><%= consultation.date %></td>
+              <td><%= consultation.time %></td>
               <td>
                 <%= link_to (consultation), method: :delete, data: { confirm: 'Are you sure?' } do%>
                   <i class="fa fa-ban"></i>
