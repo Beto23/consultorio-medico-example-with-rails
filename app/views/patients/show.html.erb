@@ -1,9 +1,9 @@
+<% consulta_by_paciente =  Consultation.where(:patient_id => @patient.id)%>
 <div class="container">
   <h2>Medical record</h2>
   <div class="foto-expediente row center-xs">
     <img src="" alt="Gravatar" />
   </div>
-  <p id="notice"><%= notice %></p>
   <div class="personal row center-xs">
     <div class="col-md">
       <p>
@@ -92,6 +92,17 @@
       <strong>Surgeries:</strong>
       <%= @patient.surgeries %>
     </p>
+  </div>
+  <div class="col-md">
+    <strong>Consultations</strong><br>
+    <%consulta_by_paciente.each do |consulta| %>
+      <div class="row">
+        Date:<p><%= consulta.date %>  </p>
+        Time: <p> <%= consulta.time %></p>
+        <%= link_to "show", consultation_path(consulta) %>
+      </div>
+
+    <%end %>
   </div>
 </div>
 
