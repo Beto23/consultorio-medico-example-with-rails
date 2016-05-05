@@ -1,5 +1,5 @@
 
-      <% nameBtn ||= "Agregar"  %>
+      <% nameBtn ||= "Create Appointment"  %>
       <%= form_for @consultation do |f| %>
         <%= render "partials/fullMessages", objeto: @consultation %>
         <div class="row">
@@ -40,7 +40,7 @@
 
 
         <%= link_to (consultations_path) do %>
-          <button type="button" class="btn btn-default">Regresar</button>
+          <button type="button" class="btn btn-default">Go Back</button>
         <%end %>
 
         <%= f.submit nameBtn, class:"btn btn-primary"  %>

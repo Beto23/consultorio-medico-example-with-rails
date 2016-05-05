@@ -7,7 +7,7 @@
 		<% if user_signed_in?  %>
 			<div class="header-user row middle-xs margen col-md end-xs">
 				<i class="fa fa-user" aria-hidden="true"></i>
-				<p><%= current_user.first_name%> <%= current_user.last_name%> (Secretaria)</p>
+				<p><%= current_user.first_name%> <%= current_user.last_name%> (Secretary)</p>
 			</div>
 		<%elsif admin_signed_in?  %>
 			<div class="header-user row middle-xs margen col-md end-xs">

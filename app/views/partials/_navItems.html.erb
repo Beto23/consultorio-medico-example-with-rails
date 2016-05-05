@@ -8,25 +8,25 @@
   <%actualizar = edit_doctor_registration_path %>
 <%end %>
 <ul class="row margen start-xs">
-  <li class="col-xs-2  row margen center-xs"><%= link_to "Inicio", root_path, class:"nav-items" %></li>
+  <li class="col-xs-2  row margen center-xs"><%= link_to "Home", root_path, class:"nav-items" %></li>
 
   <% if user_signed_in? || admin_signed_in? || doctor_signed_in? %>
-      <li class="col-md  row margen center-xs"><%= link_to "Consultas", consultations_path, class:"nav-items"  %></li>
-      <li class="col-md  row margen center-xs"><%= link_to "Pacientes", patients_path, class:"nav-items"  %></li>
+      <li class="col-md  row margen center-xs"><%= link_to "Appointments", consultations_path, class:"nav-items"  %></li>
+      <li class="col-md  row margen center-xs"><%= link_to "Patients", patients_path, class:"nav-items"  %></li>
     <% if admin_signed_in? %>
-      <li class="col-md  row margen center-xs"><%= link_to "Especialidades", specialties_path, class:"nav-items"  %></li>
-      <li class="col-md  row margen center-xs"><%= link_to "Doctores", doctors_path, class:"nav-items"  %></li>
-      <li class="col-md  row margen center-xs"><%= link_to "Secretarias", users_path, class:"nav-items" %></li>
+      <li class="col-md  row margen center-xs"><%= link_to "Physicians Specialties", specialties_path, class:"nav-items"  %></li>
+      <li class="col-md  row margen center-xs"><%= link_to "Physicians", doctors_path, class:"nav-items"  %></li>
+      <li class="col-md  row margen center-xs"><%= link_to "Secretaries", users_path, class:"nav-items" %></li>
     <%elsif user_signed_in? %>
-      <li class="col-md  row margen center-xs"><%= link_to "Doctores", medics_path, class:"nav-items"  %></li>
+      <li class="col-md  row margen center-xs"><%= link_to "Physicians", medics_path, class:"nav-items"  %></li>
     <%end %>
     <% if doctor_signed_in? || user_signed_in? %>
-      <li class="col-md  row margen center-xs"><%= link_to "Actualizar mi cuenta", actualizar, class:"nav-items" %></li>
+      <li class="col-md  row margen center-xs"><%= link_to "Account Settings", actualizar, class:"nav-items" %></li>
     <%end %>
-    <li class="col-md  row margen center-xs"><%= link_to "Cerrar sesión", cerrar, method: :delete, class:"nav-items" %></li>
+    <li class="col-md  row margen center-xs"><%= link_to "Log Out", cerrar, method: :delete, class:"nav-items" %></li>
   <%else %>
-    <li class="col-xs-2  row margen center-xs"><%= link_to "Contacto", root_path, class:"nav-items"  %></li>
-    <li class="col-xs-2  row margen center-xs"><%= link_to "Acerca de", root_path, class:"nav-items"  %></li>
-    <li class="col-xs-2  row margen center-xs"><%= link_to "Iniciar Sesión", login_as_index_path, class:"nav-items" %></li>
+    <li class="col-xs-2  row margen center-xs"><%= link_to "Contact", root_path, class:"nav-items"  %></li>
+    <li class="col-xs-2  row margen center-xs"><%= link_to "About", root_path, class:"nav-items"  %></li>
+    <li class="col-xs-2  row margen center-xs"><%= link_to "Login As", login_as_index_path, class:"nav-items" %></li>
   <%end %>
 </ul>
