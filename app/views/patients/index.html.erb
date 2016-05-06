@@ -3,11 +3,11 @@
       <div class="container-all-listado">
         <h2>Patients</h2>
         <p id="notice"><%= notice %></p>
-        <hr>
-        <%= form_tag(patients_path, :method => "get", id: "search-form", class: "row") do %>
+        <%= form_tag(patients_path, :method => "get", id: "search-form", class: "row center-xs") do %>
           <%= text_field_tag :search, params[:search], placeholder: "Search Patient", class: "search" %>
-          <%= submit_tag "Search" %>
+          <%= submit_tag "Search", class: "btn btn-info" %>
         <% end %>
+        <hr>
 
             <table class="table table-striped container-all-listado-table">
               <thead>
@@ -44,6 +44,8 @@
                       </td>
                     </tr>
                   <%end%>
+                <%else %>
+                  no hay
                 <%end %>
               </tbody>
             </table>
