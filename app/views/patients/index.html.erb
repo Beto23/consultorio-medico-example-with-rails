@@ -4,42 +4,49 @@
         <h2>Patients</h2>
         <p id="notice"><%= notice %></p>
         <hr>
-        <table class="table table-striped container-all-listado-table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>First name</th>
-              <th>Last name</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>Address</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @patients.each do |patient| %>
-              <tr>
-                <td><%= patient.id  %></td>
-                <td><%= patient.first_name %></td>
-                <td><%= patient.last_name %></td>
-                <td><%= patient.email %></td>
-                <td><%= patient.phone %></td>
-                <td><%= patient.address %></td>
-                <td>
-                  <%= link_to(patient, method: :delete) do %>
-                    <i class="fa fa-ban"></i>
-                  <%end %>
-                  <%= link_to((edit_patient_path(patient.id))) do %>
-                    <i class="fa fa-pencil"></i>
-                  <%end %>
-                  <%= link_to(patient) do %>
-                    <i class="fa fa-file-text" aria-hidden="true"></i>
-                  <%end %>
-                </td>
-              </tr>
-            <%end %>
-          </tbody>
-        </table>
+        <%= form_tag(patients_path, :method => "get", id: "search-form", class: "row") do %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search Patient", class: "search" %>
+          <%= submit_tag "Search" %>
+        <% end %>
+
+            <table class="table table-striped container-all-listado-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>First name</th>
+                  <th>Last name</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Address</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% if @patients.present? %>
+                  <% @patients.each do |patient| %>
+                    <tr>
+                      <td><%= patient.id  %></td>
+                      <td><%= patient.first_name %></td>
+                      <td><%= patient.last_name %></td>
+                      <td><%= patient.email %></td>
+                      <td><%= patient.phone %></td>
+                      <td><%= patient.address %></td>
+                      <td>
+                        <%= link_to(patient, method: :delete) do %>
+                          <i class="fa fa-ban"></i>
+                        <%end %>
+                        <%= link_to((edit_patient_path(patient.id))) do %>
+                          <i class="fa fa-pencil"></i>
+                        <%end %>
+                        <%= link_to(patient) do %>
+                          <i class="fa fa-file-text" aria-hidden="true"></i>
+                        <%end %>
+                      </td>
+                    </tr>
+                  <%end%>
+                <%end %>
+              </tbody>
+            </table>
       </div>
       <%if user_signed_in? || admin_signed_in? %>
         <%= link_to (new_patient_path) do  %>
