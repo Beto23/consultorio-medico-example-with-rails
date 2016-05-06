@@ -9,4 +9,10 @@ class Patient < ActiveRecord::Base
   validates :email, presence: true, length: { maximum: 50  }
   validates :phone, presence: true, length: { maximum: 14  }
   has_many :consultations
+
+  def self.search(search)
+    where("first_name LIKE ?", "%#{search}%")
+    where("last_name LIKE ?", "%#{search}%")
+  end
+
 end
